@@ -1,0 +1,119 @@
+.panel {
+  overflow-y: auto;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #E8DDD0;
+  border-top-color: #B07240;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* .group {} */
+
+.groupLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #B07240;
+  margin-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 14px 12px 12px;
+  background: #fff;
+  border: 1px solid #E8DDD0;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, transform 0.1s, box-shadow 0.15s;
+  font-family: inherit;
+  gap: 4px;
+}
+
+.item:hover {
+  border-color: #C8B89A;
+  box-shadow: 0 2px 8px rgba(28,18,9,0.06);
+}
+
+.item:active { transform: scale(0.97); }
+
+.itemActive {
+  border-color: #B07240;
+  background: #FDF5EE;
+}
+
+.itemEmoji {
+  font-size: 26px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.itemName {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1C1209;
+  line-height: 1.3;
+}
+
+.itemPrice {
+  font-size: 13px;
+  color: #B07240;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* qty badge top-right */
+.itemQtyBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1C1209;
+  color: #FAF7F2;
+  font-size: 11px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* veg/non-veg dot bottom-right */
+.vegIndicator {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.veg { background: #4A6E1A; }
+.non { background: #8F3D1A; }

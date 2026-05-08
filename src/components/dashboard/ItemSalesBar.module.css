@@ -1,0 +1,42 @@
+.list { display: flex; flex-direction: column; gap: 12px; }
+
+.row { display: flex; flex-direction: column; gap: 5px; }
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1C1209;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stats {
+  font-size: 12px;
+  color: #A08060;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.track {
+  height: 6px;
+  background: #F0E8DC;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #B07240;
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.empty { font-size: 13px; color: #A08060; }

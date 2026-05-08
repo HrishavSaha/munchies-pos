@@ -1,0 +1,225 @@
+.section { display: flex; flex-direction: column; gap: 16px; }
+
+.divider {
+  height: 1px;
+  background: #E8DDD0;
+  margin: 8px 0 24px;
+}
+
+/* ── Events ── */
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.eventRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid #E8DDD0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  gap: 12px;
+}
+
+.eventRow:hover { border-color: #C8B89A; }
+
+.eventRowSelected {
+  border-color: #B07240;
+  background: #FDF5EE;
+}
+
+.eventInfo { flex: 1; }
+
+.eventName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1C1209;
+}
+
+.eventDate {
+  font-size: 12px;
+  color: #A08060;
+  margin-top: 2px;
+}
+
+.eventActions { display: flex; align-items: center; gap: 8px; }
+
+.activeBadge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #EDF2E4;
+  color: #4A6E1A;
+  letter-spacing: 0.03em;
+}
+
+/* ── Create event ── */
+.createEvent {
+  background: #F5EFE6;
+  border: 1px solid #E8DDD0;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.createTitle {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #B07240;
+  margin-bottom: 12px;
+}
+
+.createRow {
+  display: grid;
+  grid-template-columns: 1fr 160px auto;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.createBtnWrap { padding-bottom: 1px; }
+
+/* ── Stock table ── */
+.saveRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.totalUnits {
+  font-size: 13px;
+  color: #7A6045;
+}
+
+.stockTable {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E8DDD0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.stockHeader {
+  display: grid;
+  grid-template-columns: 1fr 160px 1fr;
+  padding: 10px 16px;
+  background: #F5EFE6;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #B07240;
+  border-bottom: 1px solid #E8DDD0;
+}
+
+.stockRow {
+  display: grid;
+  grid-template-columns: 1fr 160px 1fr;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #F0E8DC;
+  background: #fff;
+  transition: background 0.1s;
+  gap: 8px;
+}
+
+.stockRow:last-of-type { border-bottom: none; }
+.stockRow:hover { background: #FDFAF6; }
+
+.stockItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stockEmoji { font-size: 20px; flex-shrink: 0; }
+
+.stockName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1C1209;
+}
+
+.stockMeta {
+  font-size: 12px;
+  color: #A08060;
+  margin-top: 1px;
+}
+
+/* qty stepper */
+.qtyInput {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid #E8DDD0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  width: fit-content;
+}
+
+.qtyBtn {
+  width: 32px; height: 34px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #7A6045;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+.qtyBtn:hover { background: #F5EFE6; color: #1C1209; }
+
+.qtyField {
+  width: 56px;
+  height: 34px;
+  border: none;
+  border-left: 1px solid #E8DDD0;
+  border-right: 1px solid #E8DDD0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1C1209;
+  font-family: inherit;
+  outline: none;
+  background: #fff;
+}
+.qtyField::-webkit-outer-spin-button,
+.qtyField::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+.estRev {
+  font-size: 13px;
+  color: #7A6045;
+  font-weight: 500;
+}
+
+/* Totals */
+.stockTotals {
+  display: grid;
+  grid-template-columns: 1fr 160px 1fr;
+  padding: 12px 16px;
+  background: #F5EFE6;
+  border-top: 1px solid #E8DDD0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1C1209;
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .createRow { grid-template-columns: 1fr; }
+  .stockHeader,
+  .stockRow,
+  .stockTotals { grid-template-columns: 1fr auto; }
+  .stockHeader span:last-child,
+  .stockRow .estRev,
+  .stockTotals span:last-child { display: none; }
+}

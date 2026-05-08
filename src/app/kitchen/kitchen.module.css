@@ -1,0 +1,114 @@
+.page {
+  min-height: 100vh;
+  background: #111008;
+  color: #FAF7F2;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  height: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: 500;
+  color: #FAF7F2;
+  letter-spacing: 0.01em;
+}
+
+.screen {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  padding: 3px 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.count {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+.time {
+  font-size: 15px;
+  font-weight: 500;
+  color: #E8B882;
+  letter-spacing: 0.04em;
+}
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  padding: 24px 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+/* ── States ── */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.spinner {
+  width: 28px; height: 28px;
+  border: 2px solid rgba(255,255,255,0.1);
+  border-top-color: #E8B882;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.idle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  gap: 12px;
+}
+
+.idleIcon { font-size: 40px; opacity: 0.4; }
+
+.idleText {
+  font-size: 15px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 640px) {
+  .header { padding: 0 16px; }
+  .main   { padding: 16px; }
+  .grid   { grid-template-columns: 1fr 1fr; gap: 10px; }
+}

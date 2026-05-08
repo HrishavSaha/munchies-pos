@@ -1,0 +1,121 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 18, 9, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modal {
+  background: #FAF7F2;
+  border-radius: 14px;
+  border: 1px solid #E8DDD0;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #E8DDD0;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1C1209;
+}
+
+.close {
+  width: 26px; height: 26px;
+  border: none; background: transparent;
+  font-size: 13px; color: #A08060;
+  cursor: pointer; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.close:hover { background: #EFE9E0; color: #1C1209; }
+
+.receipt {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #1C1209;
+  background: #F5EFE6;
+  padding: 14px 20px;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-top: 1px solid #E8DDD0;
+  border-bottom: 1px solid #E8DDD0;
+}
+
+.prefix {
+  padding: 12px 12px 12px 20px;
+  font-size: 14px;
+  color: #7A6045;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  padding: 12px 20px 12px 4px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #1C1209;
+  font-family: inherit;
+  outline: none;
+}
+.input::placeholder { color: #C0A882; }
+
+.actions {
+  display: flex;
+  gap: 8px;
+  padding: 14px 20px;
+}
+
+.skipBtn {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #E8DDD0;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: #7A6045;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+.skipBtn:hover { background: #F5EFE6; border-color: #C8B89A; }
+
+.sendBtn {
+  flex: 2;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #25D366;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.15s;
+}
+.sendBtn:hover:not(:disabled) { opacity: 0.85; }
+.sendBtn:disabled { opacity: 0.4; cursor: not-allowed; }
